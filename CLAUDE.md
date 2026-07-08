@@ -65,16 +65,31 @@ top-level `components/`, `db/`, `styles/`.
 - Never hardcode a color or spacing value in a component's `.module.css` —
   always reference a token.
 
+**Color semantics — standing rules for every phase, not just Foundations:**
+
+- Positive/income amounts carry no dedicated hue — body text color plus a
+  "+" prefix only. Only outflow/expense amounts get a color (the accent
+  named "Rust" in the token set). Don't introduce a "positive" color.
+- Category badge colors must never reuse the Rust/negative hue — a category
+  tag should never visually compete with "this is a loss."
+- The interactive accent ("Brass") is reserved for buttons, focus rings, and
+  links only — never reused for positive/negative semantics, so the two
+  color systems can't collide.
+
 ## Typography & fonts
 
 - **Manrope** (Latin) + **Dana** (Persian, variable font) — self-hosted, no
   external font CDN.
-- **Dana's default weight is 10 (Hairline), not 400.** Every element using
+- Dana's axes, verified directly from the font file: `wght` (10–900,
+  **default 10**) and `KASH` (0–100, default 0 — kashida/justification
+  stretch, not a width axis; leave at default, not used in this app).
+- **⚠️ Dana's default weight is 10 (Hairline), not 400.** Every element using
   Dana must set weight explicitly — never rely on the unset default, or text
-  renders nearly invisible.
-- **Dana has no standard `tnum` OpenType feature.**
-  `font-variant-numeric: tabular-nums` does nothing on Dana — use
-  `font-feature-settings: "ss03"` instead for tabular Persian numerals.
+  renders nearly invisible. Named instances line up with the type scale:
+  Regular=400 (Body), Medium=500 (Numeric), DemiBold=600 (Display).
+- **Dana has no standard `tnum` OpenType feature** (confirmed via the font's
+  GSUB table). `font-variant-numeric: tabular-nums` does nothing on Dana —
+  use `font-feature-settings: "ss03"` instead for tabular Persian numerals.
   Manrope does support `tnum`, so the numeric/tabular type role needs both
   mechanisms applied, one per script, not a single shared rule.
 - **Never use Dana's `ss02` feature** (visually reskins Latin digit
@@ -82,7 +97,19 @@ top-level `components/`, `db/`, `styles/`.
   screen-reader semantics. Persian digits must be real Persian digit
   characters, produced via `Intl.NumberFormat` with the correct locale — see
   Currency below.
-- Full `@font-face` setup and axis details: `docs/design-specs/foundations.md`.
+
+```css
+@font-face {
+  font-family: 'Dana VF';
+  src:
+    url('/fonts/DanaVF.woff2') format('woff2-variations'),
+    url('/fonts/DanaVF.woff2') format('woff2'),
+    url('/fonts/DanaVF.woff') format('woff-variations'),
+    url('/fonts/DanaVF.woff') format('woff');
+  font-weight: 10 900;
+  font-display: swap;
+}
+```
 
 ## i18n, RTL, calendars, currency
 
@@ -127,14 +154,10 @@ the imported `.dc.html` project _is_ the spec, so it can't drift out of sync
 with what was actually designed.
 
 If implementation surfaces a decision the design doesn't cover — a technical
-constraint, an accessibility requirement, a correction like the Dana font
-details below — record it directly in the relevant section of this file
-rather than in a separate per-feature doc, so `CLAUDE.md` stays the single
-source of truth for anything not visible in the design itself.
-
-`docs/design-specs/foundations.md` is a one-off exception from before this
-workflow was adopted — kept as-is for its verified font/token details, not a
-pattern to repeat for later phases.
+constraint, an accessibility requirement, a font/library quirk discovered
+along the way — record it directly in the relevant section of this file, so
+`CLAUDE.md` stays the single source of truth for anything not visible in the
+design itself.
 
 ## Phase order
 
