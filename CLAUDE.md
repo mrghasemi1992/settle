@@ -20,7 +20,7 @@ and design polish matter as much as functionality.
 - Zod — schema validation for CSV import, form input, and Dexie table shapes
 - Radix UI primitives (unstyled) — for Dialog, Select, Popover, Tooltip, Tabs,
   and the Jalali date picker. Never import Radix's or any library's prebuilt
-  *styled* components (e.g. shadcn). Compose Radix primitives and style them
+  _styled_ components (e.g. shadcn). Compose Radix primitives and style them
   from scratch in CSS Modules.
 - CSS Modules + CSS custom properties for design tokens. No Tailwind, no
   CSS-in-JS, no third-party styled component kits.
