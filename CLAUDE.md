@@ -239,6 +239,9 @@ fallback. See `styles/fonts.css`.
 - Conventional commit style: `feat:`, `fix:`, `refactor:`, `test:`, `chore:`.
 - Merge only after tests pass and the phase's Claude Design import is fully
   implemented.
+- Never run `git commit` without the user's explicit go-ahead first — this
+  holds even in auto/yolo mode, where committing is otherwise not something
+  to wait on for lower-stakes actions. Finish and verify the work, then ask.
 
 ## Design spec workflow (Claude Design ↔ Claude Code sync)
 
