@@ -91,6 +91,15 @@ prop type is not exported — it's only ever consumed inside the file that
 declares it, so name it plainly `Props` (not `ButtonProps`) rather than
 exporting a type nothing outside the file uses.
 
+**Event handlers**: a callback _prop_ is named `onX` (e.g. `onSave`,
+`onAction`) — matching native DOM/React event prop naming, so components
+compose the same way native elements do. A _local_ function that implements
+the behavior (and optionally calls the prop) is named `handleX` (e.g.
+`handleSave`) — never the same identifier as the prop, so there's no
+destructure/rename collision between the two. Don't invent a `handleX`
+wrapper just to forward a prop unchanged — `<Button onClick={onAction}>` is
+fine as-is; only name a local handler when there's real logic in it.
+
 **Barrel exports**: any folder that groups multiple sibling modules
 (`components/`, `components/primitives/`, `stores/`, `i18n/`) gets an
 `index.ts` re-exporting its public API — components/hooks/functions actually
