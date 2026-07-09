@@ -3,7 +3,7 @@ import { useAppliedTheme } from './stores/theme-store';
 import { useAppliedLocale } from './stores/locale-store';
 import { FoundationsPage } from './pages/foundations';
 
-export default function App() {
+export function App() {
   useAppliedTheme();
   useAppliedLocale();
 
