@@ -1,6 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import { useAppliedTheme } from './stores/theme-store';
-import { useAppliedLocale } from './stores/locale-store';
+import { useAppliedTheme, useAppliedLocale } from '@/stores';
 import { FoundationsPage } from './pages/foundations';
 
 export function App() {

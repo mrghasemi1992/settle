@@ -8,9 +8,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@primitives': fileURLToPath(
-        new URL('./src/components/primitives', import.meta.url),
-      ),
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
   test: {

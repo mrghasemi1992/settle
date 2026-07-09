@@ -1,9 +1,8 @@
-import { Badge } from '@primitives/badge';
-import { useTranslation } from '../../i18n';
-import { formatAmount } from '../../i18n/format';
+import { Badge } from '@/components/primitives';
+import { useTranslation, formatAmount } from '@/i18n';
 import styles from './styles.module.css';
 
-export interface TransactionRowProps {
+interface Props {
   date: string;
   merchant: string;
   categoryLabel: string;
@@ -24,7 +23,7 @@ export function TransactionRow({
   categoryColor,
   amountMinorUnits,
   currency,
-}: TransactionRowProps) {
+}: Props) {
   const { locale } = useTranslation();
   const isOutflow = amountMinorUnits < 0;
   const formatted = formatAmount(Math.abs(amountMinorUnits), currency, locale);

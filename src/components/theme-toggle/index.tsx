@@ -1,6 +1,6 @@
 import * as RadioGroup from '@radix-ui/react-radio-group';
-import { useThemeStore, type ThemeMode } from '../../stores/theme-store';
-import { useTranslation } from '../../i18n';
+import { useThemeStore, type ThemeMode } from '@/stores';
+import { useTranslation } from '@/i18n';
 import styles from './styles.module.css';
 
 const MODES: ThemeMode[] = ['light', 'dark', 'system'];

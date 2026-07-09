@@ -1,14 +1,14 @@
-import { useLocaleStore } from '../stores/locale-store';
+import { useLocaleStore } from '@/stores';
 import { en } from './locales/en';
 import { fa } from './locales/fa';
 
 const dictionaries = { en, fa };
 
-export const BCP47_TAG = { en: 'en-US', fa: 'fa-IR' } as const;
-
 /** Reads the active locale's dictionary — for currency/number formatting,
- * see `formatAmount` in `./format`. */
+ * see `formatAmount`/`formatNumber`, also exported from here. */
 export function useTranslation() {
   const locale = useLocaleStore((state) => state.locale);
   return { locale, t: dictionaries[locale] };
 }
+
+export { formatAmount, formatNumber } from './format';

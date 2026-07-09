@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { LocaleToggle } from './index';
-import { useLocaleStore } from '../../stores/locale-store';
+import { useLocaleStore } from '@/stores';
 
 describe('LocaleToggle', () => {
   beforeEach(() => {

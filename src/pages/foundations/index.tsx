@@ -1,15 +1,13 @@
 import { useState } from 'react';
 import styles from './styles.module.css';
-import { useLocaleStore } from '../../stores/locale-store';
-import { Button } from '@primitives/button';
-import { Input } from '@primitives/input';
-import { Card } from '@primitives/card';
-import { Badge } from '@primitives/badge';
-import { Switch } from '@primitives/switch';
-import { ThemeToggle } from '../../components/theme-toggle';
-import { LocaleToggle } from '../../components/locale-toggle';
-import { TransactionRow } from '../../components/transaction-row';
-import { EmptyState } from '../../components/empty-state';
+import { useLocaleStore } from '@/stores';
+import { Button, Input, Card, Badge, Switch } from '@/components/primitives';
+import {
+  ThemeToggle,
+  LocaleToggle,
+  TransactionRow,
+  EmptyState,
+} from '@/components';
 
 const NEUTRAL_STEPS = [
   { label: 'bg', varName: '--color-bg' },

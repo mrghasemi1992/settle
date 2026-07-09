@@ -1,12 +1,12 @@
-import { Button } from '@primitives/button';
-import { useTranslation } from '../../i18n';
+import { Button } from '@/components/primitives';
+import { useTranslation } from '@/i18n';
 import styles from './styles.module.css';
 
-export interface EmptyStateProps {
+interface Props {
   onAction?: () => void;
 }
 
-export function EmptyState({ onAction }: EmptyStateProps) {
+export function EmptyState({ onAction }: Props) {
   const { t } = useTranslation();
 
   return (

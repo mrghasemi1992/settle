@@ -1,5 +1,6 @@
-import { BCP47_TAG } from './index';
-import type { Locale } from '../stores/locale-store';
+import type { Locale } from '@/stores';
+
+const BCP47_TAG = { en: 'en-US', fa: 'fa-IR' } as const;
 
 /** ISO 4217 minor-unit exponents for the currencies this app supports.
  * Amounts are stored in Dexie as integers in these minor units. */

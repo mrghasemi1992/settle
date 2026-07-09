@@ -1,5 +1,5 @@
 import * as RadioGroup from '@radix-ui/react-radio-group';
-import { useLocaleStore, type Locale } from '../../stores/locale-store';
+import { useLocaleStore, type Locale } from '@/stores';
 import styles from './styles.module.css';
 
 const LABELS: Record<Locale, string> = { en: 'English', fa: 'فارسی' };

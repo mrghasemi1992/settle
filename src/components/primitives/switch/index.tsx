@@ -1,7 +1,7 @@
 import * as RadixSwitch from '@radix-ui/react-switch';
 import styles from './styles.module.css';
 
-export interface SwitchProps {
+interface Props {
   label: string;
   checked?: boolean;
   defaultChecked?: boolean;
@@ -9,7 +9,7 @@ export interface SwitchProps {
   disabled?: boolean;
 }
 
-export function Switch({ label, ...props }: SwitchProps) {
+export function Switch({ label, ...props }: Props) {
   return (
     <RadixSwitch.Root className={styles.root} aria-label={label} {...props}>
       <RadixSwitch.Thumb className={styles.thumb} />

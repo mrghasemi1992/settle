@@ -1,20 +1,13 @@
 import { useId, type InputHTMLAttributes } from 'react';
 import styles from './styles.module.css';
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   hint?: string;
   error?: string;
 }
 
-export function Input({
-  label,
-  hint,
-  error,
-  id,
-  className,
-  ...props
-}: InputProps) {
+export function Input({ label, hint, error, id, className, ...props }: Props) {
   const generatedId = useId();
   const inputId = id ?? generatedId;
   const messageId = `${inputId}-message`;
