@@ -84,7 +84,7 @@
 
 .swatchLabel {
   padding: var(--space-2) var(--space-3);
-  font-size: 12px;
+  font-size: var(--font-size-small);
   color: var(--color-text-muted);
   background: var(--color-surface);
 }
@@ -110,7 +110,7 @@
 
 .spacingBarLabel {
   width: 90px;
-  font-size: 12px;
+  font-size: var(--font-size-small);
   color: var(--color-text-muted);
   flex-shrink: 0;
 }
@@ -152,7 +152,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: var(--font-size-small);
   color: var(--color-text-faint);
 }
 
@@ -181,7 +181,7 @@
 }
 
 .numericColumnLabel {
-  font-size: 12px;
+  font-size: var(--font-size-small);
   color: var(--color-text-faint);
   margin-block-end: var(--space-2);
 }
@@ -237,7 +237,7 @@
 }
 
 .spacingBarValue {
-  font-size: 12px;
+  font-size: var(--font-size-small);
   color: var(--color-text-faint);
 }
 
@@ -263,18 +263,18 @@
 }
 
 .cardLabel {
-  font-size: 13px;
+  font-size: var(--font-size-caption);
   color: var(--color-text-faint);
   margin-block-end: 6px;
 }
 
 .cardTitle {
   font-size: 15px;
-  font-weight: 600;
+  font-weight: var(--weight-demibold);
 }
 
 .cardBody {
-  font-size: 13px;
+  font-size: var(--font-size-caption);
   color: var(--color-text-muted);
   margin-block-start: 4px;
 }

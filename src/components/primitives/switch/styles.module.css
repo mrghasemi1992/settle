@@ -6,7 +6,7 @@
   background: var(--switch-track-off);
   position: relative;
   cursor: pointer;
-  transition: background-color 0.12s ease;
+  transition: background-color var(--transition-fast);
 }
 
 .root:hover:not([data-disabled]) {
@@ -37,7 +37,7 @@
   height: 20px;
   border-radius: var(--radius-pill);
   background: var(--switch-thumb-off);
-  transition: transform 0.12s ease;
+  transition: transform var(--transition-fast);
   transform: translateX(3px);
   will-change: transform;
 }
