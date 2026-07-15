@@ -313,14 +313,27 @@ export function FoundationsPage() {
 
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>Button</h2>
-        <div className={styles.row}>
-          <Button variant="primary">Primary</Button>
-          <Button variant="secondary">Secondary</Button>
-          <Button variant="ghost">Ghost</Button>
-          <Button variant="destructive">Destructive</Button>
-          <Button variant="primary" disabled>
-            Primary — disabled
-          </Button>
+        <div className={styles.stack}>
+          <div className={styles.row}>
+            <Button variant="primary">Primary</Button>
+            <Button variant="secondary">Secondary</Button>
+            <Button variant="ghost">Ghost</Button>
+            <Button variant="destructive">Destructive</Button>
+          </div>
+          <div className={styles.row}>
+            <Button variant="primary" disabled>
+              Primary — disabled
+            </Button>
+            <Button variant="secondary" disabled>
+              Secondary — disabled
+            </Button>
+            <Button variant="ghost" disabled>
+              Ghost — disabled
+            </Button>
+            <Button variant="destructive" disabled>
+              Destructive — disabled
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -390,6 +403,7 @@ export function FoundationsPage() {
             onCheckedChange={setSwitchOn}
           />
           <Switch label="Disabled example" disabled />
+          <Switch label="Disabled — checked example" defaultChecked disabled />
         </div>
       </section>
 
