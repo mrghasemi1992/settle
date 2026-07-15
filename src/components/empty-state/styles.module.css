@@ -42,7 +42,7 @@
 }
 
 .body {
-  font-size: 14px;
+  font-size: var(--font-size-ui);
   color: var(--color-text-muted);
   max-width: 340px;
   margin-block-end: var(--space-5);

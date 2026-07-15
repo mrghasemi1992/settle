@@ -4,6 +4,7 @@ import styles from './styles.module.css';
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   hint?: string;
+  /** Replaces `hint` when both are provided — only one message renders below the input. */
   error?: string;
 }
 
