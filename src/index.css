@@ -1,19 +1,8 @@
+@import './styles/reset.css';
 @import './styles/fonts.css';
 @import './styles/tokens.css';
 @import './styles/theme-dark.css';
 @import './styles/theme-light.css';
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
 
 body {
   background: var(--color-bg);
