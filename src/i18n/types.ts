@@ -17,8 +17,17 @@ export interface Dictionary {
     skipToContent: string;
     language: string;
     theme: string;
+    settings: string;
     route: string;
     placeholderText: string;
+  };
+  settings: {
+    title: string;
+    lede: string;
+    language: string;
+    languageHint: string;
+    theme: string;
+    themeHint: string;
   };
   emptyState: {
     title: string;

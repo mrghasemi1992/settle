@@ -1,7 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import { Button } from '@/components/primitives';
-import { LocaleMenu } from '@/components/locale-menu';
-import { ThemeMenu } from '@/components/theme-menu';
 import { NAV_ICON_PATHS, NAV_ITEMS } from '@/components/nav-items';
 import { useUiStore } from '@/stores';
 import { useTranslation } from '@/i18n';
@@ -90,34 +87,32 @@ export function SidebarNav() {
         ))}
       </div>
 
-      <div className={styles.footer}>
-        <Button
-          type="button"
-          variant="primary"
-          className={styles.addButton}
-          aria-label={t.nav.addTransaction}
-          title={t.nav.addTransaction}
+      <NavLink
+        to="/settings"
+        title={t.nav.settings}
+        className={({ isActive }) =>
+          `${styles.navItem} ${styles.settingsItem} ${isActive ? styles.navItemActive : ''}`
+        }
+      >
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 20 20"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className={styles.navIcon}
+          aria-hidden="true"
         >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 20 20"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-            aria-hidden="true"
-          >
-            <path d="M10 4v12M4 10h12" />
-          </svg>
-          <span className={styles.addLabel}>{t.nav.addTransaction}</span>
-        </Button>
-        <div className={styles.divider} />
-        <div className={styles.controlsRow}>
-          <LocaleMenu />
-          <ThemeMenu />
-        </div>
-      </div>
+          <path d="M4 6h5M13 6h3M4 10h3M9 10h7M4 14h9M15 14h1" />
+          <circle cx="11" cy="6" r="1.8" />
+          <circle cx="7" cy="10" r="1.8" />
+          <circle cx="13" cy="14" r="1.8" />
+        </svg>
+        <span className={styles.navLabel}>{t.nav.settings}</span>
+      </NavLink>
     </nav>
   );
 }

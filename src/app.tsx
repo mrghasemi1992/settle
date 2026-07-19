@@ -6,6 +6,7 @@ import { DashboardPage } from './pages/dashboard';
 import { TransactionsPage } from './pages/transactions';
 import { ReportsPage } from './pages/reports';
 import { BudgetsPage } from './pages/budgets';
+import { SettingsPage } from './pages/settings';
 
 export function App() {
   useAppliedTheme();
@@ -19,6 +20,7 @@ export function App() {
           <Route path="/transactions" element={<TransactionsPage />} />
           <Route path="/reports" element={<ReportsPage />} />
           <Route path="/budgets" element={<BudgetsPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
         </Route>
         <Route path="/design-system" element={<DesignSystemPage />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />

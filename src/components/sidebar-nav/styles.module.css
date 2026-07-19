@@ -147,56 +147,6 @@
   display: none;
 }
 
-.footer {
+.settingsItem {
   margin-top: auto;
-  padding: var(--space-4) var(--space-4) 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.nav[data-collapsed='true'] .footer {
-  padding: var(--space-4) 0 0;
-  display: flex;
-  justify-content: center;
-}
-
-.addButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  width: 100%;
-}
-
-.nav[data-collapsed='true'] .addButton {
-  width: 40px;
-  height: 40px;
-  padding: 0;
-}
-
-.addLabel {
-  white-space: nowrap;
-}
-
-.nav[data-collapsed='true'] .addLabel {
-  display: none;
-}
-
-.divider {
-  height: 1px;
-  background: var(--sidebar-border);
-  margin: 14px 0 12px;
-}
-
-.nav[data-collapsed='true'] .divider {
-  display: none;
-}
-
-.controlsRow {
-  display: flex;
-  gap: 6px;
-}
-
-.nav[data-collapsed='true'] .controlsRow {
-  display: none;
 }

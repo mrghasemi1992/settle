@@ -57,14 +57,22 @@ describe('SidebarNav', () => {
     expect(useUiStore.getState().sidebarCollapsed).toBe(true);
   });
 
-  it('renders the add-transaction action and the locale/theme controls', () => {
+  it('renders a link to settings and no add-transaction action', () => {
     renderNav();
+    expect(screen.getByRole('link', { name: 'Settings' })).toHaveAttribute(
+      'href',
+      '/settings',
+    );
     expect(
-      screen.getByRole('button', { name: 'Add transaction' }),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole('button', { name: 'Language' }),
-    ).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Theme' })).toBeInTheDocument();
+      screen.queryByRole('button', { name: 'Add transaction' }),
+    ).not.toBeInTheDocument();
+  });
+
+  it('marks settings as the active page when on /settings', () => {
+    renderNav('/settings');
+    expect(screen.getByRole('link', { name: 'Settings' })).toHaveAttribute(
+      'aria-current',
+      'page',
+    );
   });
 });

@@ -19,8 +19,17 @@ export const fa: Dictionary = {
     skipToContent: 'پرش به محتوا',
     language: 'زبان',
     theme: 'پوسته',
+    settings: 'تنظیمات',
     route: 'مسیر',
     placeholderText: 'محتوای صفحه اینجا نمایش داده می‌شود',
+  },
+  settings: {
+    title: 'تنظیمات',
+    lede: 'ظاهر و نمایش سِتل را مدیریت کنید.',
+    language: 'زبان',
+    languageHint: 'زبان رابط کاربری و جهت متن.',
+    theme: 'پوسته',
+    themeHint: 'روشن، تیره یا هماهنگ با سیستم.',
   },
   emptyState: {
     title: 'هنوز تراکنشی ثبت نشده',

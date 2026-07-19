@@ -244,19 +244,35 @@ fallback. See `styles/fonts.css`.
   `components/nav-items.ts` rather than duplicating it, since the Claude
   Design source keeps the same four nav entries (icons included) across both
   layouts.
+- Locale/theme controls live on a dedicated `/settings` page (`LocaleMenu` +
+  `ThemeMenu`, restyled as fixed-size triggers instead of the `flex:1`
+  half-width pair they were as sidebar-footer inhabitants — laid out on the
+  page as label+hint rows inside a `Card`, one per setting), not inline in
+  the sidebar — moved there, and the sidebar's "Add transaction" button
+  removed entirely, per product feedback on the Claude Design preview
+  rather than the design file itself, so there's no mock to match either
+  change. The sidebar's nav list now ends with a single "Settings" link
+  pinned to the bottom via `margin-top: auto`, styled with the exact same
+  `.navItem`/`.navItemActive` classes as Dashboard/Transactions/Reports/
+  Budgets (same active-indicator border, same icon-rail collapse behavior)
+  rather than a bespoke style, so it reads as a peer nav entry, not a
+  separate footer widget. It is desktop-sidebar-only by request — it is
+  deliberately **not** added to `BottomNav`/`nav-items.ts`, so mobile
+  currently has no way to reach Settings, and the mobile FAB is the only
+  surviving "Add transaction" entry point (the desktop equivalent is gone).
+  Revisit if mobile access to Settings becomes a real need.
 - Neither the mobile bottom-tab-bar nor the desktop icon-rail expose
-  locale/theme controls — the Claude Design mock never shows them in either
-  narrow state (bottom-nav has no room at all; the icon-rail mock omits them
-  despite prose suggesting an "overflow menu" that no frame actually shows).
-  Implementation follows the literal mocks in both cases. Revisit if
-  narrow-viewport access to locale/theme becomes a real need.
+  locale/theme controls directly — on the icon rail the Settings link is
+  still reachable (icon-only, same as the other nav items); on mobile
+  there's no Settings entry at all (see above), so locale/theme are
+  currently unreachable from a phone-width viewport.
 - The brand wordmark is localized (`t.brand`: "Settle" / "پول") per the
   Claude Design RTL mock, which explicitly re-styles it in Dana at 17px
   rather than reusing the Latin wordmark's 16px. Only `SidebarNav` renders
   it — `BottomNav` has no brand mark in the design, matching a typical
   mobile tab bar.
-- `LocaleMenu`/`ThemeMenu` (compact `DropdownMenu`-based triggers used in the
-  sidebar footer) are intentionally separate components from
+- `LocaleMenu`/`ThemeMenu` (compact `DropdownMenu`-based triggers, now used
+  on the Settings page) are intentionally separate components from
   `LocaleToggle`/`ThemeToggle` (segmented `RadioGroup` controls used on the
   Design System reference page) — popover-menu and inline-segmented-control
   are different interaction patterns, not variants of one component.
