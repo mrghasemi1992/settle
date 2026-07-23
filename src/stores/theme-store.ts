@@ -13,7 +13,7 @@ interface ThemeState {
 // Theme mode has no natural home in Dexie — it's a UI-only preference that
 // must be readable before the app (and IndexedDB) has mounted, so it's
 // persisted straight to localStorage via zustand's persist middleware. The
-// blocking script in index.html reads the same 'settle-theme' key to avoid
+// blocking script in index.html reads the same 'money-theme' key to avoid
 // a flash of the wrong theme before React hydrates.
 export const useThemeStore = create<ThemeState>()(
   persist(
@@ -21,7 +21,7 @@ export const useThemeStore = create<ThemeState>()(
       mode: 'system',
       setMode: (mode) => set({ mode }),
     }),
-    { name: 'settle-theme' },
+    { name: 'money-theme' },
   ),
 );
 

@@ -15,6 +15,6 @@ export const useUiStore = create<UiState>()(
       toggleSidebarCollapsed: () =>
         set((state) => ({ sidebarCollapsed: !state.sidebarCollapsed })),
     }),
-    { name: 'settle-ui' },
+    { name: 'money-ui' },
   ),
 );

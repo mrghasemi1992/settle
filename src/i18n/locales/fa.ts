@@ -25,7 +25,7 @@ export const fa: Dictionary = {
   },
   settings: {
     title: 'تنظیمات',
-    lede: 'ظاهر و نمایش سِتل را مدیریت کنید.',
+    lede: 'ظاهر و نمایش پول را مدیریت کنید.',
     language: 'زبان',
     languageHint: 'زبان رابط کاربری و جهت متن.',
     theme: 'پوسته',
@@ -37,7 +37,7 @@ export const fa: Dictionary = {
     cta: 'افزودن تراکنش',
   },
   designSystem: {
-    eyebrow: 'Settle',
+    eyebrow: 'پول',
     title: 'سیستم طراحی',
     lede: 'توکن‌ها و اجزای پایه برای یک اپ دفترکل محلی — مرجع یکتایی که تمام صفحات از آن ساخته می‌شوند.',
     color: {

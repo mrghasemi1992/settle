@@ -279,7 +279,7 @@ fallback. See `styles/fonts.css`.
   still reachable (icon-only, same as the other nav items); on mobile
   there's no Settings entry at all (see above), so locale/theme are
   currently unreachable from a phone-width viewport.
-- The brand wordmark is localized (`t.brand`: "Settle" / "پول") per the
+- The brand wordmark is localized (`t.brand`: "Money" / "پول") per the
   Claude Design RTL mock, which explicitly re-styles it in Dana at 17px
   rather than reusing the Latin wordmark's 16px. Only `SidebarNav` renders
   it — `BottomNav` has no brand mark in the design, matching a typical

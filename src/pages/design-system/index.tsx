@@ -219,8 +219,8 @@ export function DesignSystemPage() {
             </div>
             <div className={styles.bodySample}>
               {locale === 'fa'
-                ? 'سِتل تمام حساب‌ها را روی دستگاه شما نگه می‌دارد. چیزی بدون اجازه شما جایی همگام نمی‌شود.'
-                : "Settle keeps every account on-device. Nothing syncs anywhere you didn't choose."}
+                ? 'پول تمام حساب‌ها را روی دستگاه شما نگه می‌دارد. چیزی بدون اجازه شما جایی همگام نمی‌شود.'
+                : "Money keeps every account on-device. Nothing syncs anywhere you didn't choose."}
             </div>
           </div>
           <div className={styles.typeRole}>

@@ -1,7 +1,7 @@
 import type { Dictionary } from '@/i18n/types';
 
 export const en: Dictionary = {
-  brand: 'Settle',
+  brand: 'Money',
   theme: {
     light: 'Light',
     dark: 'Dark',
@@ -25,7 +25,7 @@ export const en: Dictionary = {
   },
   settings: {
     title: 'Settings',
-    lede: 'Manage how Settle looks and reads.',
+    lede: 'Manage how Money looks and reads.',
     language: 'Language',
     languageHint: 'Interface language and text direction.',
     theme: 'Theme',
@@ -37,7 +37,7 @@ export const en: Dictionary = {
     cta: 'Add a transaction',
   },
   designSystem: {
-    eyebrow: 'Settle',
+    eyebrow: 'Money',
     title: 'Design system',
     lede: 'The tokens and base primitives for a local-first ledger app — the single reference every screen is built from.',
     color: {

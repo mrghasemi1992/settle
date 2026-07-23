@@ -11,7 +11,7 @@ interface LocaleState {
 
 // Active locale has no natural home in Dexie — it's a UI-only preference,
 // persisted straight to localStorage so it's available before the app
-// mounts. The blocking script in index.html reads the same 'settle-locale'
+// mounts. The blocking script in index.html reads the same 'money-locale'
 // key to set dir/lang before first paint and avoid a layout flash.
 export const useLocaleStore = create<LocaleState>()(
   persist(
@@ -19,7 +19,7 @@ export const useLocaleStore = create<LocaleState>()(
       locale: 'en',
       setLocale: (locale) => set({ locale }),
     }),
-    { name: 'settle-locale' },
+    { name: 'money-locale' },
   ),
 );
 
