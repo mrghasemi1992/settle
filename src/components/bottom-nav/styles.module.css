@@ -7,7 +7,7 @@
   border-block-start: 1px solid var(--sidebar-border);
   display: flex;
   align-items: stretch;
-  z-index: 5;
+  z-index: var(--z-bottom-nav);
 }
 
 .navItem {

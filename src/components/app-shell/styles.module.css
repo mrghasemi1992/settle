@@ -15,7 +15,7 @@
   font-size: var(--font-size-caption);
   font-weight: var(--weight-demibold);
   text-decoration: none;
-  z-index: 10;
+  z-index: var(--z-skip-link);
   transition: top var(--transition-fast);
 }
 
