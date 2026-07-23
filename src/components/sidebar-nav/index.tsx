@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { ChevronLeft, Settings, Wallet } from 'lucide-react';
+import { Settings, Wallet } from 'lucide-react';
 import { NAV_ICONS, NAV_ITEMS } from '@/components/nav-items';
 import { useUiStore } from '@/stores';
 import { useTranslation } from '@/i18n';
@@ -7,12 +7,7 @@ import styles from './styles.module.css';
 
 export function SidebarNav() {
   const collapsed = useUiStore((state) => state.sidebarCollapsed);
-  const toggleSidebarCollapsed = useUiStore(
-    (state) => state.toggleSidebarCollapsed,
-  );
-  const { locale, t } = useTranslation();
-
-  const chevronMirrored = (locale === 'fa') !== collapsed;
+  const { t } = useTranslation();
 
   return (
     <nav
@@ -30,24 +25,6 @@ export function SidebarNav() {
           />
           <span className={styles.wordmark}>{t.brand}</span>
         </div>
-        <button
-          type="button"
-          className={styles.collapseButton}
-          onClick={toggleSidebarCollapsed}
-          aria-label={
-            collapsed ? t.nav.expandNavigation : t.nav.collapseNavigation
-          }
-          title={
-            collapsed ? t.nav.expandNavigation : t.nav.collapseNavigation
-          }
-        >
-          <ChevronLeft
-            size={14}
-            strokeWidth={1.6}
-            className={chevronMirrored ? styles.chevronMirrored : undefined}
-            aria-hidden="true"
-          />
-        </button>
       </div>
 
       <div className={styles.navList}>

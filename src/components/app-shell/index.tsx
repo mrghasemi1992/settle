@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { SidebarNav } from '@/components/sidebar-nav';
+import { SidebarTrigger } from '@/components/sidebar-trigger';
 import { BottomNav } from '@/components/bottom-nav';
 import { AddTransactionFab } from '@/components/add-transaction-fab';
 import { useTranslation } from '@/i18n';
@@ -42,6 +43,7 @@ export function AppShell() {
         id="main-content"
         className={`${styles.main} ${isMobile ? styles.mainMobile : ''}`}
       >
+        {!isMobile && <SidebarTrigger />}
         <Outlet />
       </main>
       {isMobile && (

@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { SidebarNav } from './index';
 import { useLocaleStore, useUiStore } from '@/stores';
@@ -47,14 +46,6 @@ describe('SidebarNav', () => {
     expect(
       screen.getByRole('link', { name: 'Dashboard' }),
     ).not.toHaveAttribute('aria-current');
-  });
-
-  it('toggles the sidebar-collapsed store when the collapse button is clicked', async () => {
-    renderNav();
-    await userEvent.click(
-      screen.getByRole('button', { name: 'Collapse navigation' }),
-    );
-    expect(useUiStore.getState().sidebarCollapsed).toBe(true);
   });
 
   it('renders a link to settings and no add-transaction action', () => {
